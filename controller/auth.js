@@ -128,6 +128,7 @@ const sendOTP = async (email) => {
 const otpVerification = async (req, res) => {
   try {
     const { finalValue } = req.body;
+    console.log(req.body,'req.body');
     const { userName, email, password, image } = req.body.userData;
     const otp = finalValue;
     if (!otp) {

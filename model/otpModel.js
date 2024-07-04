@@ -1,7 +1,6 @@
 import { DataTypes } from 'sequelize';
-import sequelize from './sequelize.js'; // Adjust this path as necessary
-import { mailSender } from '../utils/MailSender/MailSender.js';
-
+import sequelize from './sequelize.js'; 
+import {mailSender} from '../utils/MailSender/mailSender.js'
 const Otp = sequelize.define('Otp', {
   otp: {
     type: DataTypes.INTEGER,
@@ -10,11 +9,11 @@ const Otp = sequelize.define('Otp', {
   email: {
     type: DataTypes.STRING,
     allowNull: false
-  },  createdAt: { // Sequelize will automatically handle this field
+  },  createdAt: { 
     type: DataTypes.DATE,
     defaultValue: DataTypes.NOW
   },
-  updatedAt: { // Sequelize will automatically handle this field
+  updatedAt: { 
     type: DataTypes.DATE,
     defaultValue: DataTypes.NOW
   }
