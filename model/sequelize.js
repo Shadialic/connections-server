@@ -15,10 +15,10 @@ const sequelize = new Sequelize(process.env.DB_DATABASE, process.env.DB_USER, pr
   port: process.env.DB_PORT,
   dialect: 'postgres',
   dialectOptions: {
-    ssl: false 
-  }
+    ssl: false // Disable SSL for testing
+  },
+  logging: console.log
 });
-
 // Test the database connection
 sequelize.authenticate()
   .then(() => {
