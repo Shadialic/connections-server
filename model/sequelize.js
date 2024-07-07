@@ -22,9 +22,13 @@ const sequelize = new Sequelize(process.env.DB_URL, {
   dialect: 'postgres',
   logging: false,
   dialectOptions: {
-    ssl: false 
+    ssl: {
+      require: true,
+      rejectUnauthorized: false // This is for self-signed certificates
+    }
   }
 });
+
 sequelize.authenticate()
   .then(() => {
     console.log('Connection has been established successfully.');
