@@ -59,6 +59,7 @@ const googleRegistration = async (req, res) => {
         is_google: true,
         is_Active: true,
       });
+      console.log(googleUser,'googleUser');
       if (googleUser) {
         const token = createSecretToken(
           exist.id,
@@ -103,6 +104,7 @@ const googleRegistration = async (req, res) => {
 };
 
 const sendOTP = async (email) => {
+  console.log(email,'email');
   try {
     let otp = otpGenerator.generate(6, {
       upperCaseAlphabets: false,
